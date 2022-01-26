@@ -5,6 +5,8 @@ function Title(props) {
 			<style jsx> {`
 				h1 {
 					color: red;
+					font-size: 44px;
+					font-weight: 600;
 				}
 			`} </style>
 		</>
