@@ -1,3 +1,13 @@
+function GlobalStyle() {
+	return (
+		<style global jsx> {`
+			* {
+				background: black;
+			}
+		`} </style>
+	)
+}
+
 function Title(props) {
 	const Tag = props.tag
 	return (
