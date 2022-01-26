@@ -1,13 +1,13 @@
 function Title(props) {
 	return (
-		<div>
+		<>
 			<h1>{props.children}</h1>
 			<style jsx> {`
 				h1 {
 					color: red;
 				}
 			`} </style>
-		</div>
+		</>
 	)
 }
 
