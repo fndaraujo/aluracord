@@ -47,7 +47,7 @@ function Title(props) {
 
 function HomePage() {
 	return (
-		<div style={{ background: 'black' }} >
+		<div>
 			<GlobalStyle />
 			<Title tag="h1">Boas Vindas de Volta!</Title>
 			<h2>Discord - Alura Matrix</h2>
