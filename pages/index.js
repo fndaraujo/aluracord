@@ -1,6 +1,6 @@
-function Title() {
+function Title(props) {
 	return (
-		<h1>Ignorando tag</h1>
+		<h1>{props.children}</h1>
 	)
 }
 
