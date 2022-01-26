@@ -1,0 +1,8 @@
+{
+  "name": "aluracord",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:fndaraujo/aluracord.git",
+  "author": "Fernando Araujo dos Santos",
+  "license": "MIT"
+}
