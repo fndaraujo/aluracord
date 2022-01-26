@@ -1,4 +1,4 @@
-function Title() {
+function Titulo() {
 	return (
 		<h1>Boas Vindas de Volta!</h1>
 	)
@@ -7,7 +7,7 @@ function Title() {
 function HomePage() {
 	return (
 		<div>
-			<Title>Boas Vindas de Volta!</Title>
+			<Titulo>Boas Vindas de Volta!</Titulo>
 			<h2>Discord - Alura Matrix</h2>
 			<style jsx> {`
 				h1 {
