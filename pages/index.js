@@ -2,7 +2,9 @@ function GlobalStyle() {
 	return (
 		<style global jsx> {`
 			* {
-				background: black;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
 			}
 		`} </style>
 	)
