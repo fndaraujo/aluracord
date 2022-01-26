@@ -1,9 +1,10 @@
 function Title(props) {
+	const Tag = props.tag
 	return (
 		<>
-			<h1>{props.children}</h1>
+			<Tag>{props.children}</Tag>
 			<style jsx> {`
-				h1 {
+				${Tag} {
 					color: red;
 					font-size: 44px;
 					font-weight: 600;
@@ -16,7 +17,7 @@ function Title(props) {
 function HomePage() {
 	return (
 		<div>
-			<Title>Boas Vindas de Volta!</Title>
+			<Title tag="h1">Boas Vindas de Volta!</Title>
 			<h2>Discord - Alura Matrix</h2>
 		</div>
 	)
