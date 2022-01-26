@@ -1,6 +1,6 @@
 function Title() {
 	return (
-		<h1>Boas Vindas de Volta!</h1>
+		<h1>Ignorando tag</h1>
 	)
 }
 
