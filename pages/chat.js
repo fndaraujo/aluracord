@@ -57,6 +57,11 @@ export default function Chat() {
 							const value = event.target.value;
 							setMessage(value);
 						}}
+						onKeyPress={function (event) {
+							if (event.key === 'Enter') {
+								setMessage('');
+							}
+						}}
 						placeholder="Insira sua mensagem aqui..."
 						type="textarea"
 						styleSheet={{
