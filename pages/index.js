@@ -50,6 +50,7 @@ function Title(props) {
 
 export default function HomePage() {
 	const [username, setUsername] = React.useState('omariosouto');
+	const routing = useRouter();
 	return (
 		<>
 			<GlobalStyle />
@@ -81,7 +82,7 @@ export default function HomePage() {
 						as="form"
 						onSubmit={function(event_submit) {
 							event_submit.preventDefault();
-							// TODO: Router.
+							routing.push('/chat');
 						}}
 						styleSheet={{
 							display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
