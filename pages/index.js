@@ -89,6 +89,7 @@ export default function HomePage() {
 					</Text>
 
 					<TextField
+						value={username}
 						fullWidth
 						textFieldColors={{
 							neutral: {
