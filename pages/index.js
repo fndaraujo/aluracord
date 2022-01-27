@@ -90,6 +90,9 @@ export default function HomePage() {
 
 					<TextField
 						value={username}
+						onChange={function(event) {
+							console.log('user input: ', event.target.value);
+						}}
 						fullWidth
 						textFieldColors={{
 							neutral: {
