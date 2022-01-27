@@ -48,7 +48,7 @@ function Title(props) {
 }
 
 export default function HomePage() {
-	const username = 'omariosouto';
+	const [username, setUsername] = React.useState('omariosouto');
 
 	return (
 		<>
