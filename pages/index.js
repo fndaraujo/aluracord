@@ -81,6 +81,7 @@ export default function HomePage() {
 						as="form"
 						onSubmit={function(event_submit) {
 							event_submit.preventDefault();
+							window.location.href = '/chat';
 						}}
 						styleSheet={{
 							display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
