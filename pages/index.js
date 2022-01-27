@@ -1,5 +1,6 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 import React from 'react';
+import { useRouter } from 'next/router';
 import appConfig from '../config.json';
 
 function GlobalStyle() {
@@ -49,7 +50,6 @@ function Title(props) {
 
 export default function HomePage() {
 	const [username, setUsername] = React.useState('omariosouto');
-
 	return (
 		<>
 			<GlobalStyle />
@@ -81,7 +81,7 @@ export default function HomePage() {
 						as="form"
 						onSubmit={function(event_submit) {
 							event_submit.preventDefault();
-							window.location.href = '/chat';
+							// TODO: Router.
 						}}
 						styleSheet={{
 							display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
