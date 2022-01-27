@@ -3,6 +3,7 @@ import React from 'react';
 import appConfig from '../config.json';
 
 export default function Chat() {
+	const [message, setMessage] = React.useState('');
 	return (
 		<Box
 			styleSheet={{
@@ -51,6 +52,11 @@ export default function Chat() {
 						}}
 					>
 					<TextField
+						value={message}
+						onChange={function (event) {
+							const value = event.target.value;
+							setMessage(value);
+						}}
 						placeholder="Insira sua mensagem aqui..."
 						type="textarea"
 						styleSheet={{
