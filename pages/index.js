@@ -31,7 +31,7 @@ function GlobalStyle() {
 }
 
 function Title(props) {
-	const Tag = props.tag
+	const Tag = props.tag || 'h1';
 	return (
 		<>
 			<Tag>{props.children}</Tag>
