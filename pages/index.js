@@ -79,6 +79,9 @@ export default function HomePage() {
 					{/* Formulário */}
 					<Box
 						as="form"
+						onSubmit={function(event_submit) {
+							event_submit.preventDefault();
+						}}
 						styleSheet={{
 							display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
 							width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
