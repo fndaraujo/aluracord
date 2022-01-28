@@ -4,6 +4,7 @@ import appConfig from '../config.json';
 
 export default function Chat() {
 	const [message, setMessage] = React.useState('');
+	const [MessageList, setMessageList] = React.useState([]);
 	return (
 		<Box
 			styleSheet={{
@@ -43,6 +44,13 @@ export default function Chat() {
 				>
 
 					{/* <MessageList mensagens={[]} /> */}
+					{MessageList.map((current_message) => {
+						return (
+							<li>
+								{current_message}
+							</li>
+						)
+					})}
 
 					<Box
 						as="form"
@@ -59,6 +67,11 @@ export default function Chat() {
 						}}
 						onKeyPress={function (event) {
 							if (event.key === 'Enter') {
+								event.preventDefault();
+								setMessageList([
+									...MessageList,
+									message
+								]);
 								setMessage('');
 							}
 						}}
