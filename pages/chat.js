@@ -8,16 +8,17 @@ const SUPABASE_URL = '';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-supabase
-	.from('mensagens')
-	.select('*')
-	.then((data) => {
-		console.log('SELECT: ', data);
-	});
-
 export default function Chat() {
 	const [message, setMessage] = React.useState('');
 	const [messageList, setMessageList] = React.useState([]);
+	React.useEffect(() => {
+		supabase
+			.from('mensagens')
+			.select('*')
+			.then(({ data }) => {
+				setMessageList(data);
+			});
+	}, []);
 	function HandleNewMessage(current_message) {
 		const message = {
 			id: messageList.length,
