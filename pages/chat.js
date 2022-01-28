@@ -5,6 +5,13 @@ import appConfig from '../config.json';
 export default function Chat() {
 	const [message, setMessage] = React.useState('');
 	const [MessageList, setMessageList] = React.useState([]);
+	function HandleNewMessage(message) {
+		setMessageList([
+			...MessageList,
+			message
+		]);
+		setMessage('');
+	}
 	return (
 		<Box
 			styleSheet={{
@@ -68,11 +75,7 @@ export default function Chat() {
 						onKeyPress={function (event) {
 							if (event.key === 'Enter') {
 								event.preventDefault();
-								setMessageList([
-									...MessageList,
-									message
-								]);
-								setMessage('');
+								HandleNewMessage(message);
 							}
 						}}
 						placeholder="Insira sua mensagem aqui..."
