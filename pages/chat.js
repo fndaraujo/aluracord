@@ -22,14 +22,22 @@ export default function Chat() {
 	}, []);
 	function HandleNewMessage(current_message) {
 		const message = {
-			id: messageList.length,
+			//id: messageList.length,
 			from: 'vanessametonini',
 			text: current_message,
 		};
-		setMessageList([
-			message,
-			...messageList
-		]);
+		supabase
+			.from('mensagens')
+			.insert([
+				message
+			])
+			.then(({ data }) => {
+				setMessageList([
+					data[0],
+					...messageList
+				]);
+				console.log('Create message: ' + data);
+			});
 		setMessage('');
 	}
 	return (
