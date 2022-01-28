@@ -15,6 +15,7 @@ export default function Chat() {
 		supabase
 			.from('mensagens')
 			.select('*')
+			.order('id', { ascending: false })
 			.then(({ data }) => {
 				setMessageList(data);
 			});
