@@ -4,16 +4,16 @@ import appConfig from '../config.json';
 
 export default function Chat() {
 	const [message, setMessage] = React.useState('');
-	const [MessageList, setMessageList] = React.useState([]);
+	const [messageList, setMessageList] = React.useState([]);
 	function HandleNewMessage(current_message) {
 		const message = {
-			id: MessageList.length,
+			id: messageList.length,
 			from: 'vanessametonini',
 			text: current_message,
 		};
 		setMessageList([
-			...MessageList,
-			message
+			message,
+			...messageList
 		]);
 		setMessage('');
 	}
@@ -55,14 +55,14 @@ export default function Chat() {
 					}}
 				>
 
-					{/* <MessageList mensagens={[]} /> */}
-					{MessageList.map((current_message) => {
+					<MessageList messages={messageList} />
+					{/*{messageList.map((current_message) => {
 						return (
 							<li key={current_message.id}>
 								{current_message.from}: {current_message.text}
 							</li>
 						)
-					})}
+					})}*/}
 
 					<Box
 						as="form"
@@ -122,7 +122,7 @@ function Header() {
 }
 
 function MessageList(props) {
-	console.log('MessageList', props);
+	console.log('messageList', props);
 	return (
 		<Box
 			tag="ul"
@@ -136,49 +136,54 @@ function MessageList(props) {
 			}}
 		>
 
-		<Text
-			key={mensagem.id}
-			tag="li"
-			styleSheet={{
-				borderRadius: '5px',
-				padding: '6px',
-				marginBottom: '12px',
-				hover: {
-					backgroundColor: appConfig.theme.colors.neutrals[700],
-				}
-			}}
-		>
-		<Box
-			styleSheet={{
-				marginBottom: '8px',
-			}}
-		>
-			<Image
-				styleSheet={{
-					width: '20px',
-					height: '20px',
-					borderRadius: '50%',
-					display: 'inline-block',
-					marginRight: '8px',
-				}}
-				src={`https://github.com/vanessametonini.png`}
-			/>
-			<Text tag="strong">
-				{mensagem.de}
-			</Text>
-			<Text
-				styleSheet={{
-					fontSize: '10px',
-					marginLeft: '8px',
-					color: appConfig.theme.colors.neutrals[300],
-				}}
-				tag="span"
-			>
-				{(new Date().toLocaleDateString())}
-			</Text>
-			</Box>
-				{mensagem.texto}
-			</Text>
+		{props.messages.map((message) => {
+			return (
+				<Text
+					key={message.id}
+					tag="li"
+					styleSheet={{
+						borderRadius: '5px',
+						padding: '6px',
+						marginBottom: '12px',
+						hover: {
+							backgroundColor: appConfig.theme.colors.neutrals[700],
+						}
+					}}
+				>
+				<Box
+					styleSheet={{
+						marginBottom: '8px',
+					}}
+				>
+					<Image
+						styleSheet={{
+							width: '20px',
+							height: '20px',
+							borderRadius: '50%',
+							display: 'inline-block',
+							marginRight: '8px',
+						}}
+						src={`https://github.com/vanessametonini.png`}
+					/>
+					<Text tag="strong">
+						{message.from}
+					</Text>
+					<Text
+						styleSheet={{
+							fontSize: '10px',
+							marginLeft: '8px',
+							color: appConfig.theme.colors.neutrals[300],
+						}}
+						tag="span"
+					>
+						{(new Date().toLocaleDateString())}
+					</Text>
+					</Box>
+						{message.text}
+					</Text>
+					)
+		})}
+
 		</Box>
 	)
 }
