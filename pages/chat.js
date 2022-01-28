@@ -3,6 +3,18 @@ import React from 'react';
 import appConfig from '../config.json';
 import { createClient } from '@supabase/supabase-js';
 
+const SUPABASE_ANON_KEY = '';
+const SUPABASE_URL = '';
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+supabase
+	.from('mensagens')
+	.select('*')
+	.then((data) => {
+		console.log('SELECT: ', data);
+	});
+
 export default function Chat() {
 	const [message, setMessage] = React.useState('');
 	const [messageList, setMessageList] = React.useState([]);
