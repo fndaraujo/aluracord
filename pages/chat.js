@@ -5,7 +5,12 @@ import appConfig from '../config.json';
 export default function Chat() {
 	const [message, setMessage] = React.useState('');
 	const [MessageList, setMessageList] = React.useState([]);
-	function HandleNewMessage(message) {
+	function HandleNewMessage(current_message) {
+		const message = {
+			id: MessageList.length,
+			from: 'vanessametonini',
+			text: current_message,
+		};
 		setMessageList([
 			...MessageList,
 			message
@@ -53,8 +58,8 @@ export default function Chat() {
 					{/* <MessageList mensagens={[]} /> */}
 					{MessageList.map((current_message) => {
 						return (
-							<li>
-								{current_message}
+							<li key={current_message.id}>
+								{current_message.from}: {current_message.text}
 							</li>
 						)
 					})}
