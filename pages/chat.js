@@ -34,7 +34,7 @@ export default function Chat() {
 				flex: 1,
 				boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
 				borderRadius: '5px',
-				backgroundColor: appConfig.theme.colors.neutrals[700],
+				backgroundColor: appConfig.theme.colors.neutrals['700'],
 				height: '100%',
 				maxWidth: '95%',
 				maxHeight: '95vh',
@@ -48,7 +48,7 @@ export default function Chat() {
 						display: 'flex',
 						flex: 1,
 						height: '80%',
-						backgroundColor: appConfig.theme.colors.neutrals[600],
+						backgroundColor: appConfig.theme.colors.neutrals['600'],
 						flexDirection: 'column',
 						borderRadius: '5px',
 						padding: '16px',
@@ -56,13 +56,6 @@ export default function Chat() {
 				>
 
 					<MessageList messages={messageList} />
-					{/*{messageList.map((current_message) => {
-						return (
-							<li key={current_message.id}>
-								{current_message.from}: {current_message.text}
-							</li>
-						)
-					})}*/}
 
 					<Box
 						as="form"
@@ -91,9 +84,9 @@ export default function Chat() {
 							resize: 'none',
 							borderRadius: '5px',
 							padding: '6px 8px',
-							backgroundColor: appConfig.theme.colors.neutrals[800],
+							backgroundColor: appConfig.theme.colors.neutrals['800'],
 							marginRight: '12px',
-							color: appConfig.theme.colors.neutrals[200],
+							color: appConfig.theme.colors.neutrals['200'],
 						}}
 					/>
 					</Box>
@@ -122,7 +115,6 @@ function Header() {
 }
 
 function MessageList(props) {
-	console.log('messageList', props);
 	return (
 		<Box
 			tag="ul"
@@ -131,7 +123,7 @@ function MessageList(props) {
 				display: 'flex',
 				flexDirection: 'column-reverse',
 				flex: 1,
-				color: appConfig.theme.colors.neutrals["000"],
+				color: appConfig.theme.colors.neutrals['000'],
 				marginBottom: '16px',
 			}}
 		>
@@ -146,7 +138,7 @@ function MessageList(props) {
 						padding: '6px',
 						marginBottom: '12px',
 						hover: {
-							backgroundColor: appConfig.theme.colors.neutrals[700],
+							backgroundColor: appConfig.theme.colors.neutrals['700'],
 						}
 					}}
 				>
@@ -172,7 +164,7 @@ function MessageList(props) {
 						styleSheet={{
 							fontSize: '10px',
 							marginLeft: '8px',
-							color: appConfig.theme.colors.neutrals[300],
+							color: appConfig.theme.colors.neutrals['300'],
 						}}
 						tag="span"
 					>
