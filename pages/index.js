@@ -10,7 +10,7 @@ function Title(props) {
 			<Tag>{props.children}</Tag>
 			<style jsx> {`
 				${Tag} {
-					color: ${appConfig.theme.colors.neutrals['000']};
+					color: ${appConfig.theme.colors.neutrals['400']};
 					font-size: 44px;
 					font-weight: 600;
 				}
@@ -27,7 +27,7 @@ export default function HomePage() {
 			<Box
 				styleSheet={{
 					display: 'flex', alignItems: 'center', justifyContent: 'center',
-					backgroundColor: appConfig.theme.colors.primary['500'],
+					backgroundColor: appConfig.theme.colors.primary['400'],
 					backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
 					backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
 				}}
@@ -44,7 +44,7 @@ export default function HomePage() {
 						width: '100%', maxWidth: '700px',
 						borderRadius: '5px', padding: '32px', margin: '16px',
 						boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-						backgroundColor: appConfig.theme.colors.neutrals['800'],
+						backgroundColor: appConfig.theme.colors.neutrals['000'],
 					}}
 				>
 					{/* Formulário */}
@@ -73,10 +73,10 @@ export default function HomePage() {
 						fullWidth
 						textFieldColors={{
 							neutral: {
-							  textColor: appConfig.theme.colors.neutrals['000'],
-							  mainColor: appConfig.theme.colors.neutrals['900'],
-							  mainColorHighlight: appConfig.theme.colors.primary['200'],
-							  backgroundColor: appConfig.theme.colors.neutrals['600'],
+							  textColor: appConfig.theme.colors.neutrals['400'],
+							  mainColor: appConfig.theme.colors.neutrals['300'],
+							  mainColorHighlight: appConfig.theme.colors.primary['400'],
+							  backgroundColor: appConfig.theme.colors.neutrals['000'],
 							},
 						}}
 					/>
@@ -86,9 +86,9 @@ export default function HomePage() {
 						fullWidth
 						buttonColors={{
 							contrastColor: appConfig.theme.colors.neutrals['000'],
-							mainColor: appConfig.theme.colors.primary['500'],
-							mainColorLight: appConfig.theme.colors.primary['400'],
-							mainColorStrong: appConfig.theme.colors.primary['200'],
+							mainColor: appConfig.theme.colors.primary['100'],
+							mainColorLight: appConfig.theme.colors.primary['100'],
+							mainColorStrong: appConfig.theme.colors.primary['400'],
 						}}
 					/>
 					</Box>
@@ -103,9 +103,9 @@ export default function HomePage() {
 							alignItems: 'center',
 							maxWidth: '200px',
 							padding: '16px',
-							backgroundColor: appConfig.theme.colors.neutrals['800'],
+							backgroundColor: appConfig.theme.colors.neutrals['000'],
 							border: '1px solid',
-							borderColor: appConfig.theme.colors.neutrals['600'],
+							borderColor: appConfig.theme.colors.neutrals['100'],
 							borderRadius: '10px',
 							flex: 1,
 							minHeight: '240px',
@@ -121,8 +121,8 @@ export default function HomePage() {
 						<Text
 							variant="body4"
 							styleSheet={{
-								color: appConfig.theme.colors.neutrals['200'],
-								backgroundColor: appConfig.theme.colors.neutrals['999'],
+								color: appConfig.theme.colors.neutrals['300'],
+								backgroundColor: appConfig.theme.colors.neutrals['000'],
 								padding: '3px 10px',
 								borderRadius: '1000px'
 							}}
