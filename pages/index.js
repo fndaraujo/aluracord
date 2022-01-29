@@ -122,6 +122,8 @@ export default function HomePage() {
 								color: appConfig.theme.colors.neutrals['300'],
 								backgroundColor: appConfig.theme.colors.neutrals['000'],
 								padding: '3px 10px',
+								border: '1px solid',
+								borderColor: appConfig.theme.colors.neutrals['100'],
 								borderRadius: '1000px'
 							}}
 						>
