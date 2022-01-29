@@ -52,7 +52,7 @@ export default function HomePage() {
 						as="form"
 						onSubmit={function(event_submit) {
 							event_submit.preventDefault();
-							routing.push('/chat');
+							routing.push(`/chat?username=${username}`);
 						}}
 						styleSheet={{
 							display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
