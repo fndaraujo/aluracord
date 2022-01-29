@@ -47,9 +47,7 @@ export default function Chat() {
 		<Box
 			styleSheet={{
 				display: 'flex', alignItems: 'center', justifyContent: 'center',
-				backgroundColor: appConfig.theme.colors.primary['400'],
-				backgroundImage: `url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)`,
-				backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
+				backgroundColor: appConfig.theme.colors.primary['000'],
 				color: appConfig.theme.colors.neutrals['400']
 			}}
 		>
@@ -125,7 +123,14 @@ export default function Chat() {
 function Header() {
 	return (
 		<>
-			<Box styleSheet={{ width: '100%', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} >
+			<Box styleSheet={{
+					width: '100%',
+					marginBottom: '16px',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'space-between'
+				}}
+			>
 				<Text variant='heading5'>
 					Chat
 				</Text>
