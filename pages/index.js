@@ -21,6 +21,7 @@ function Title(props) {
 
 export default function HomePage() {
 	const [username, setUsername] = React.useState('omariosouto');
+	const [image_src, setImageSrc] = React.useState(`https://github.com/${username}.png`);
 	const routing = useRouter();
 	return (
 		<>
@@ -114,7 +115,7 @@ export default function HomePage() {
 							borderRadius: '50%',
 							marginBottom: '16px',
 							}}
-							src={`https://github.com/${username}.png`}
+							src={image_src}
 						/>
 						<Text
 							variant="body4"
