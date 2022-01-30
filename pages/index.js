@@ -68,6 +68,11 @@ export default function HomePage() {
 						onChange={function(event) {
 							const input_value = event.target.value;
 							setUsername(input_value);
+							if (event.target.value.length > 2) {
+								setImageSrc(`https://github.com/${event.target.value}.png`);
+							} else {
+								setImageSrc('');
+							}
 						}}
 						fullWidth
 						textFieldColors={{
