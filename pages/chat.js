@@ -27,8 +27,8 @@ export default function Chat() {
 	function HandleNewMessage(current_message) {
 		const message = {
 			//id: messageList.length,
-			from: login_user,
-			text: current_message,
+			de: login_user,
+			texto: current_message,
 		};
 		supabase
 			.from('mensagens')
@@ -42,7 +42,7 @@ export default function Chat() {
 				]);
 				console.log('Create message: ' + data);
 			});
-		setMessage('');
+		setMessage(data);
 	}
 	return (
 		<Box
@@ -189,10 +189,10 @@ function MessageList(props) {
 							display: 'inline-block',
 							marginRight: '8px',
 						}}
-						src={`https://github.com/${message.from}.png`}
+						src={`https://github.com/${message.de}.png`}
 					/>
 					<Text tag="strong">
-						{message.from}
+						{message.de}
 					</Text>
 					<Text
 						styleSheet={{
@@ -205,7 +205,7 @@ function MessageList(props) {
 						{(new Date().toLocaleDateString())}
 					</Text>
 					</Box>
-						{message.text}
+						{message.texto}
 					</Text>
 					)
 		})}
