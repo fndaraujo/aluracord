@@ -10,6 +10,15 @@ const SUPABASE_URL = '';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+function ListenMessageRealTime(addMessage) {
+	return supabase
+		.from('mensagens')
+		.on('INSERT', (res_live) => {
+			addMessage(res_live.new)
+		})
+		.subscribe();
+}
+
 export default function Chat() {
 	const router = useRouter();
 	const login_user = router.query.username;
@@ -24,6 +33,17 @@ export default function Chat() {
 				setMessageList(data);
 			});
 	}, []);
+	const subscription = ListenMessageRealTime((new_message) => {
+		setMessageList((current_message_list) => {
+			return [
+				new_message,
+				...current_message_list
+			]
+		});
+		return () => {
+			subscription.unsubscribe();
+		}
+	}, []);
 	function HandleNewMessage(current_message) {
 		const message = {
 			//id: messageList.length,
@@ -36,13 +56,14 @@ export default function Chat() {
 				message
 			])
 			.then(({ data }) => {
-				setMessageList([
-					data[0],
-					...messageList
-				]);
+				//setMessageList([
+					//data[0],
+					//...messageList
+				//]);
 				console.log('Create message: ' + data);
 			});
-		setMessage(data);
+		//setMessage(data);
+		setMessage('');
 	}
 	return (
 		<Box
