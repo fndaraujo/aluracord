@@ -114,6 +114,7 @@ export default function Chat() {
 							color: appConfig.theme.colors.neutrals['000'],
 						}}
 					/>
+					<ButtonSendSticker />
 					</Box>
 				</Box>
 			</Box>
