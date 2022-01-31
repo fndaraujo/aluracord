@@ -114,7 +114,11 @@ export default function Chat() {
 							color: appConfig.theme.colors.neutrals['000'],
 						}}
 					/>
-					<ButtonSendSticker />
+					<ButtonSendSticker
+						onStickerClick = { (sticker) => {
+							HandleNewMessage(':sticker: ' + sticker);
+						}}
+					/>
 					</Box>
 				</Box>
 			</Box>
@@ -205,7 +209,11 @@ function MessageList(props) {
 						{(new Date().toLocaleDateString())}
 					</Text>
 					</Box>
-						{message.texto}
+						{message.texto.startsWith(':sticker:') ?
+								(<Image src={message.texto.replace(':sticker:', '')}/>)
+							:
+								(message.texto)
+						}
 					</Text>
 					)
 		})}
