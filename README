@@ -1,3 +1,40 @@
 ALURACORD
 -------------------------------------------------------------------------------
-A chat project done with react and nextjs in the alura react immersion week.
+This is a chat project done with the Next.js framework during the Alura React
+Immersion week, between the days 24 and 28 of January, 2022, with purpose to
+demonstrate development done with the framework and implement a real time
+message exchange application.
+
+CHALLENGES
+Some challenges where proposed during each lesson to improve the application
+functionality and test development knowledge, and they are all listed bellow.
+
+[ ] Lesson 1 - Customize aluracord with own theme.
+[ ] Lesson 2 - Practice with useRouter.
+[ ] Lesson 2 - Show user image only if input more than two characters.
+[ ] Lesson 2 - Fetch other informations of the user using the GitHub API.
+[ ] Lesson 2 - Put something funny in the 404 page.
+[ ] Lesson 3 - Insert an OK button to send messages.
+[ ] Lesson 3 - Insert a delete message button.
+[ ] Lesson 4 - Implement a message is loading while fetching the database.
+[ ] Lesson 4 - Implement an effect when mouse hovering, use reference 1.
+[ ] Lesson 5 - Implement any feature desired.
+
+KNOWN BUGS
+The list that follows is not an extensive and a definitive collection of known
+bugs in the current state of the application.
+
+- There is no database authentication configured, but it will likely connect if
+  one is configured.
+
+- Chat stylesheet will break and overflow with a sufficient long message
+  string present in the message list.
+
+- User name bellow photo area will lose position when the user photo is not
+  available.
+
+- Will break execution after sending message in chat, although the message is
+  sent to the database.
+
+REFERENCES
+1 - https://pt-br.reactjs.org/docs/events.html#mouse-events
