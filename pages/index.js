@@ -20,7 +20,7 @@ function Title(props) {
 }
 
 export default function HomePage() {
-	const [username, setUsername] = React.useState('omariosouto');
+	const [username, setUsername] = React.useState('alura');
 	const [image_src, setImageSrc] = React.useState(`https://github.com/${username}.png`);
 	const routing = useRouter();
 	return (
